@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.notes.NotesFragment"
+        android:label="@string/finance_manager"
+        tools:layout="@layout/fragment_notes" >
+        <action
+            android:id="@+id/action_notesFragment_to_chooseCategoryFragment"
+            app:destination="@id/chooseCategoryFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_detailsNoteFragment"
+            app:destination="@id/detailsNoteFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/diagramFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.diagrams.DiagramFragment"
+        android:label="@string/diagrams"
+        tools:layout="@layout/fragment_diagram" >
+        <action
+            android:id="@+id/action_diagramFragment_to_chooseCategoryFragment"
+            app:destination="@id/chooseCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.reports.ReportFragment"
+        android:label="@string/reports"
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_reportFragment_to_chooseCategoryFragment"
+            app:destination="@id/chooseCategoryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_allCategoriesSheetFragment"
+            app:destination="@id/allCategoriesSheetFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_chooseCategoryFragment"
+            app:destination="@id/chooseCategoryFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/allCategoriesSheetFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.all_categories.AllCategoriesSheetFragment"
+        android:label="fragment_all_categories_sheet"
+        tools:layout="@layout/fragment_all_categories_sheet" >
+        <action
+            android:id="@+id/action_allCategoriesSheetFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_allCategoriesSheetFragment_to_addCategorySheetFragment"
+            app:destination="@id/addCategorySheetFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/addCategorySheetFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.add_category.AddCategorySheetFragment"
+        android:label="fragment_add_category_sheet"
+        tools:layout="@layout/fragment_add_category_sheet" >
+        <action
+            android:id="@+id/action_addCategorySheetFragment_to_allCategoriesSheetFragment"
+            app:destination="@id/allCategoriesSheetFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/chooseCategoryFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.choose_category.ChooseCategoryFragment"
+        android:label="fragment_choose_category"
+        tools:layout="@layout/fragment_choose_category" >
+        <action
+            android:id="@+id/action_chooseCategoryFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/addNoteFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.add_note.AddNoteFragment"
+        android:label="fragment_add_note_sheet"
+        tools:layout="@layout/fragment_add_note_sheet" >
+        <argument
+            android:name="chosenCategory"
+            app:argType="com.higashi.personalfinancemanager.data.entities.Category" />
+        <action
+            android:id="@+id/action_addNoteFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/detailsNoteFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.details_note.DetailsNoteFragment"
+        android:label="fragment_details_note"
+        tools:layout="@layout/fragment_details_note" >
+        <argument
+            android:name="transactionWithCategory"
+            app:argType="com.higashi.personalfinancemanager.data.entities.TransactionAndCategory" />
+        <action
+            android:id="@+id/action_detailsNoteFragment_to_updateNoteFragment"
+            app:destination="@id/updateNoteFragment" />
+    </dialog>
+    <dialog
+        android:id="@+id/updateNoteFragment"
+        android:name="com.higashi.personalfinancemanager.ui.fragments.update_note.UpdateNoteFragment"
+        android:label="UpdateNoteFragment" >
+        <argument
+            android:name="oldTransaction"
+            app:argType="com.higashi.personalfinancemanager.data.entities.TransactionAndCategory" />
+        <action
+            android:id="@+id/action_updateNoteFragment_to_detailsNoteFragment"
+            app:destination="@id/detailsNoteFragment" />
+    </dialog>
+</navigation>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
+    tools:context=".ui.fragments.profile.ProfileFragment">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="740dp"
+        android:background="@drawable/top_profile_sheet_rounded"
+        app:layout_constraintBottom_toTopOf="@id/profilePictureImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profilePictureImageView">
+
+    </View>
+
+    <ImageView
+        android:id="@+id/profilePictureImageView"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/profile_picture_description"
+        android:src="@drawable/ic_profile_picture"
+        app:layout_constraintEnd_toStartOf="@id/profileNameTextView"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/profileNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/google_sans_bold"
+        android:text="@string/your_profile"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        app:layout_constraintBottom_toBottomOf="@id/profilePictureImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/profilePictureImageView"
+        app:layout_constraintTop_toTopOf="@id/profilePictureImageView" />
+
+    <Button
+        android:id="@+id/configureCategoriesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_image"
+        android:drawableStart="@drawable/ic_configure_category"
+        android:drawableEnd="@drawable/ic_configure_category_right_arrow"
+        android:drawablePadding="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="@string/configure_categories"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:layout_constraintTop_toBottomOf="@id/profilePictureImageView" />
+
+    <Button
+        android:id="@+id/shareWithFriendsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_image"
+        android:drawableStart="@drawable/ic_share_with_friends"
+        android:drawableEnd="@drawable/ic_configure_category_right_arrow"
+        android:drawablePadding="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="@string/share_with_friends"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:layout_constraintTop_toBottomOf="@id/configureCategoriesButton" />
+
+    <Button
+        android:id="@+id/rateAppButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_image"
+        android:drawableStart="@drawable/ic_rate_app"
+        android:drawableEnd="@drawable/ic_configure_category_right_arrow"
+        android:drawablePadding="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="@string/rate_our_app"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:layout_constraintTop_toBottomOf="@id/shareWithFriendsButton" />
+
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_image"
+        android:drawableStart="@drawable/ic_settings"
+        android:drawableEnd="@drawable/ic_configure_category_right_arrow"
+        android:drawablePadding="10dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="@string/settings"
+        android:textAlignment="textStart"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:layout_constraintTop_toBottomOf="@id/rateAppButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

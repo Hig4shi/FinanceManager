@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_rounded"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.add_category.AddCategorySheetFragment">
+
+    <TextView
+        android:id="@+id/enterCategoryEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center_horizontal"
+        android:text="@string/enter_category_name_and_description"
+        android:textColor="@color/black"
+        android:textSize="20sp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginVertical="10dp"
+        app:boxStrokeColor="@color/black"
+        app:endIconMode="clear_text"
+        app:placeholderText="@string/name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/categoryNameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imeOptions="actionDone"
+            android:maxLength="18"
+            android:maxLines="1"
+            android:textSize="20sp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/descriptionTextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginVertical="10dp"
+        app:boxStrokeColor="@color/black"
+        app:endIconMode="clear_text"
+        app:placeholderText="@string/description">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/categoryDescriptionEditText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imeOptions="actionDone"
+            android:maxLength="32"
+            android:maxLines="2"
+            android:textSize="20sp"
+            app:boxStrokeColor="@color/card_green" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/prefixChooseTypeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="@string/choose_type_of_operation"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+        android:id="@+id/typeOfOperation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="10dp"
+        app:justifyContent="center">
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/expense"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            app:toggle_selectedBackgroundColor="@color/card_red"
+            app:toggle_text="@string/expense" />
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/revenue"
+            android:layout_width="wrap_content"
+            android:layout_height="38dp"
+            app:toggle_selectedBackgroundColor="@color/card_green"
+            app:toggle_text="@string/revenue" />
+
+    </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addCategoryButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/add_category"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:backgroundTint="@color/light_gray" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="180dp" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

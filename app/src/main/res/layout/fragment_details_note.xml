@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/detailsNote"
+    tools:context=".ui.fragments.details_note.DetailsNoteFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/transactionDetailsToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/card_green"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/details"
+        app:titleCentered="true"
+        app:titleTextColor="@color/black" />
+
+    <TextView
+        android:id="@+id/prefixCategoryNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/category"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/transactionDetailsToolbar" />
+
+    <TextView
+        android:id="@+id/categoryNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/category_name_example"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/prefixCategoryNameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideLine"
+        app:layout_constraintTop_toTopOf="@id/prefixCategoryNameTextView" />
+
+    <TextView
+        android:id="@+id/prefixTypeOfOperationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/type"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/prefixCategoryNameTextView"
+        app:layout_constraintTop_toBottomOf="@id/prefixCategoryNameTextView" />
+
+    <TextView
+        android:id="@+id/typeOfOperationTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/type_of_operation_example"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/prefixTypeOfOperationTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideLine"
+        app:layout_constraintTop_toTopOf="@id/prefixTypeOfOperationTextView" />
+
+    <TextView
+        android:id="@+id/prefixAmountOfMoneyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/amount"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/prefixTypeOfOperationTextView"
+        app:layout_constraintTop_toBottomOf="@id/prefixTypeOfOperationTextView" />
+
+    <TextView
+        android:id="@+id/amountOfMoneyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount_of_money_example"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/prefixAmountOfMoneyTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideLine"
+        app:layout_constraintTop_toTopOf="@id/prefixAmountOfMoneyTextView" />
+
+    <TextView
+        android:id="@+id/prefixDateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/date"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/prefixAmountOfMoneyTextView"
+        app:layout_constraintTop_toBottomOf="@id/prefixAmountOfMoneyTextView" />
+
+    <TextView
+        android:id="@+id/dateTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/date_example"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/prefixDateTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideLine"
+        app:layout_constraintTop_toTopOf="@id/prefixDateTextView" />
+
+    <TextView
+        android:id="@+id/prefixDescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/description"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/prefixDateTextView"
+        app:layout_constraintTop_toBottomOf="@id/prefixDateTextView" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="30dp"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:lines="4"
+        android:maxWidth="235dp"
+        android:text="@string/description_example"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/prefixDescriptionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guideLine"
+        app:layout_constraintTop_toTopOf="@id/prefixDescriptionTextView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.35" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        app:layout_constraintBottom_toBottomOf="@id/updateTransactionDetailsButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/transactionDetailsToolbar" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/updateTransactionDetailsButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="0.1dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="casual"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="10dp"
+        android:text="@string/update"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/deleteTransactionButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="0.1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/deleteTransactionButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="casual"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:padding="10dp"
+        android:text="@string/delete"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/updateTransactionDetailsButton"
+        app:strokeColor="@color/light_gray"
+        app:strokeWidth="0.1dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

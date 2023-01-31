@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.diagrams.DiagramFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/diagramToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/card_green"
+        android:paddingTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Diagram"
+        app:titleCentered="true">
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/top_notes_sheet"
+        app:layout_constraintBottom_toTopOf="@id/prefixStartDatePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diagramToolbar"></View>
+
+    <nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup
+        android:id="@+id/typeOfOperation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="35dp"
+        android:layout_marginStart="15dp"
+        app:justifyContent="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/diagramToolbar"
+        app:toggle_horizontalSpacing="1dp"
+        app:toggle_selectableAmount="1">
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/expensesThemedButton"
+            android:layout_width="167dp"
+            android:layout_height="36dp"
+            app:toggle_backgroundColor="@color/card_green"
+            app:toggle_borderColor="@color/black"
+            app:toggle_borderWidth="1dp"
+            app:toggle_btnCornerRadius="2dp"
+            app:toggle_paddingHorizontal="35dp"
+            app:toggle_selectedBackgroundColor="@color/black"
+            app:toggle_selectedTextColor="@color/card_green"
+            app:toggle_text="@string/expenses"
+            app:toggle_textColor="@color/black"
+            app:toggle_textSize="16sp" />
+
+        <nl.bryanderidder.themedtogglebuttongroup.ThemedButton
+            android:id="@+id/revenuesThemedButton"
+            android:layout_width="167dp"
+            android:layout_height="36dp"
+            app:toggle_backgroundColor="@color/card_green"
+            app:toggle_borderColor="@color/black"
+            app:toggle_borderWidth="1dp"
+            app:toggle_btnCornerRadius="2dp"
+            app:toggle_paddingHorizontal="35dp"
+            app:toggle_selectedBackgroundColor="@color/black"
+            app:toggle_selectedTextColor="@color/card_green"
+            app:toggle_text="@string/revenues"
+            app:toggle_textColor="@color/black"
+            app:toggle_textSize="16sp" />
+
+    </nl.bryanderidder.themedtogglebuttongroup.ThemedToggleButtonGroup>
+
+    <TextView
+        android:id="@+id/prefixStartDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Start date:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/prefixEndDatePicker"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/typeOfOperation"
+        app:layout_goneMarginEnd="10dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/startDatePicker"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="casual"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/date_example"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/prefixStartDatePicker"
+        app:layout_constraintStart_toStartOf="@id/prefixStartDatePicker"
+        app:layout_constraintTop_toBottomOf="@id/prefixStartDatePicker" />
+
+    <TextView
+        android:id="@+id/prefixEndDatePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="End date:"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/prefixStartDatePicker"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/prefixStartDatePicker"
+        app:layout_constraintTop_toTopOf="@id/prefixStartDatePicker" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/endDatePicker"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="casual"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/date_example"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:theme="@android:style/ThemeOverlay.Material.Dark"
+        app:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="@id/prefixEndDatePicker"
+        app:layout_constraintStart_toStartOf="@id/prefixEndDatePicker"
+        app:layout_constraintTop_toBottomOf="@id/prefixEndDatePicker" />
+
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/pie"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/startDatePicker">
+
+    </com.github.mikephil.charting.charts.PieChart>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

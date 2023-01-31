@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.notes.NotesFragment">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/notesToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/card_green"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="@string/finance_manager"
+        app:titleCentered="true"
+        app:titleTextColor="@color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/top_notes_sheet"
+        app:layout_constraintTop_toBottomOf="@id/notesToolbar"
+        app:layout_constraintBottom_toBottomOf="@id/guideLine">
+    </View>
+
+    <ImageView
+        android:id="@+id/dateRangeImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_date_range"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:background="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toTopOf="@id/verticalLineView"
+        app:layout_constraintBottom_toBottomOf="@id/verticalLineView"/>
+
+    <View
+        android:id="@+id/verticalLineView"
+        android:layout_width="1dp"
+        android:layout_height="36dp"
+        android:layout_marginHorizontal="14dp"
+        android:background="#403F3F"
+        app:layout_constraintTop_toBottomOf="@id/notesToolbar"
+        app:layout_constraintStart_toEndOf="@id/dateRangeImageView"
+        app:layout_constraintBottom_toTopOf="@id/guideLine" />
+
+    <TextView
+        android:id="@+id/prefixExpensesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/expenses"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/verticalLineView"
+        app:layout_constraintEnd_toStartOf="@id/revenuesTextView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@id/verticalLineView" />
+
+    <TextView
+        android:id="@+id/expensesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/money_example"
+        android:maxLength="7"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/prefixExpensesTextView"
+        app:layout_constraintStart_toStartOf="@id/prefixExpensesTextView"
+        app:layout_constraintBottom_toBottomOf="@id/verticalLineView"/>
+
+    <TextView
+        android:id="@+id/prefixRevenuesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/revenues"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/prefixExpensesTextView"
+        app:layout_constraintStart_toEndOf="@id/prefixExpensesTextView"
+        app:layout_constraintTop_toTopOf="@id/prefixExpensesTextView"
+        app:layout_constraintEnd_toStartOf="@id/balanceTextView"/>
+
+    <TextView
+        android:id="@+id/revenuesTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/money_example"
+        android:maxLength="7"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/expensesTextView"
+        app:layout_constraintTop_toBottomOf="@id/prefixRevenuesTextView"
+        app:layout_constraintStart_toStartOf="@id/prefixRevenuesTextView"
+        app:layout_constraintBottom_toBottomOf="@id/expensesTextView"/>
+
+    <TextView
+        android:id="@+id/prefixBalanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/balance"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@id/prefixRevenuesTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/prefixRevenuesTextView"
+        app:layout_constraintTop_toTopOf="@id/prefixRevenuesTextView" />
+
+    <TextView
+        android:id="@+id/balanceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/money_example"
+        android:maxLength="7"
+        android:textSize="22sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="@id/revenuesTextView"
+        app:layout_constraintTop_toBottomOf="@id/prefixBalanceTextView"
+        app:layout_constraintStart_toStartOf="@id/prefixBalanceTextView"
+        app:layout_constraintBottom_toBottomOf="@id/revenuesTextView"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.20" />
+
+    <ImageView
+        android:id="@+id/noDataImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_no_data"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/noDataTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_data"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/noDataImageView" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/allTransactionsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/guideLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
